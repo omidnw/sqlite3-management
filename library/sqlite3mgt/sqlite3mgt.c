@@ -99,3 +99,8 @@ gchar *tablename, *columnnames, *value;
         }
     }
 }
+
+gboolean sqlite_is_database_open()
+{
+    return databasename != NULL;
+}
