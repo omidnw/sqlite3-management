@@ -5,10 +5,11 @@
 #include "../sqlite3/sqlite3.h"
 
 gchar *databasename;
-void open_sqlite_database_with_path(gchar *gdatabasename);
-void sqlite_create_table(gchar *tablename, gchar *columnnames);
-void sqlite_delete_table(gchar *tablename);
-void sqlite_insert_value_to_table(gchar *tablename, gchar *columnnames, gchar *value);
-gboolean sqlite_is_database_open();
+void sqlitemgt_open_database_with_path(gchar *gdatabasename);
+void sqlitemgt_create_table(gchar *tablename, gchar *columnnames);
+void sqlitemgt_delete_table(gchar *tablename);
+void sqlitemgt_insert_value_to_table(gchar *tablename, gchar *columnnames, gchar *value);
+void sqlitemgt_delete_value_from_table(gchar *tablename, gchar *columnname, gchar *value);
+gboolean sqlitemgt_is_database_open();
 
 #endif
