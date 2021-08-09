@@ -51,7 +51,7 @@ const gchar *tablename, *columnnames;
 }
 
 void sqlitemgt_delete_table(tablename)
-gchar *tablename;
+const gchar *tablename;
 {
     if (databasename == NULL){
         g_warning("database name empty please try again!");
@@ -80,7 +80,7 @@ gchar *tablename;
 
 /*******************************CRUD*******************************/
 void sqlitemgt_insert_value_to_table(tablename, columnnames, value)
-gchar *tablename, *columnnames, *value;
+const gchar *tablename, *columnnames, *value;
 {
     if (databasename == NULL){
         g_warning("database name empty please try again!");
@@ -107,7 +107,7 @@ gchar *tablename, *columnnames, *value;
 }
 
 void sqlitemgt_delete_value_from_table(tablename, columnname, value)
-gchar *tablename, *columnname, *value;
+const gchar *tablename, *columnname, *value;
 {
     if (databasename == NULL){
         g_warning("database name empty please try again!");
