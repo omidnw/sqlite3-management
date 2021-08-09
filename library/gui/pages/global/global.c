@@ -5,7 +5,7 @@ GtkWidget *g_widget;
 {
     if (NULL == g_widget)
     {
-        g_error("stop baby! %s", gtk_widget_get_name(g_widget));
+        g_error("value %s!", gtk_widget_get_name(g_widget));
     }
 }
 
