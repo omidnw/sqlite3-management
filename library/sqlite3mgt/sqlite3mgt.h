@@ -4,7 +4,6 @@
 #include <gtk/gtk.h>
 #include "../sqlite3/sqlite3.h"
 
-gchar *databasename;
 void sqlitemgt_open_database_with_path(gchar *gdatabasename);
 void sqlitemgt_create_table(gchar *tablename, gchar *columnnames);
 void sqlitemgt_delete_table(gchar *tablename);

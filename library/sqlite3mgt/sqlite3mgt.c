@@ -1,5 +1,6 @@
 #include "sqlite3mgt.h"
 
+gchar *databasename;
 sqlite3 *db;
 char sqlarray[255], *err_msg = 0;
 int rc;
