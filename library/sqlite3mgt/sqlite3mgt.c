@@ -25,7 +25,7 @@ gchar *gdatabasename;
 /*******************************Table*******************************/
 
 void sqlitemgt_create_table(tablename, columnnames)
-gchar *tablename, *columnnames;
+const gchar *tablename, *columnnames;
 {
     if (databasename == NULL){
         g_warning("database name empty please try again!");
@@ -34,7 +34,7 @@ gchar *tablename, *columnnames;
         sqlite3_open(databasename, &db);
     
         snprintf(sqlarray, sizeof(sqlarray), "CREATE TABLE %s(%s);", tablename, columnnames);
-        g_print("database address: %s | sql query: %s", databasename, sqlarray);
+        g_message("database address: %s | sql query: %s", databasename, sqlarray);
         rc = sqlite3_exec(db, sqlarray, 0, 0, &err_msg);
         if(rc != SQLITE_OK)
         {
