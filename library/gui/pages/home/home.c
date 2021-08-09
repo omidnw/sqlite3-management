@@ -2,7 +2,7 @@
 
 void create_home_page()
 {
-    GtkWidget *window, *createtablefilemenu, *deletetablefilemenu, *insertvaluefilemenu, *deletevaluefilemenu, *quitmenu;
+    GtkWidget *window, *createtablefilemenu, *deletetablefilemenu, *insertvaluefilemenu, *deletevaluefilemenu, *savemenu, *quitmenu;
     GtkBuilder *homebuilder;
 
     homebuilder = gtk_builder_new();
@@ -13,6 +13,7 @@ void create_home_page()
     deletetablefilemenu = GTK_WIDGET(gtk_builder_get_object(homebuilder, "deletetablefilemenu"));
     insertvaluefilemenu = GTK_WIDGET(gtk_builder_get_object(homebuilder, "insertvaluefilemenu"));
     deletevaluefilemenu = GTK_WIDGET(gtk_builder_get_object(homebuilder, "deletevaluefilemenu"));
+    savemenu = GTK_WIDGET(gtk_builder_get_object(homebuilder, "save"));
     quitmenu = GTK_WIDGET(gtk_builder_get_object(homebuilder, "quit"));
 
     /*********************check null*********************/
@@ -32,6 +33,7 @@ void create_home_page()
 
     sqlitemgt_set_global_gui_settings(window, "home");
 
+    g_signal_connect(G_OBJECT(savemenu), "activate", G_CALLBACK(on_menu_save), NULL);
     g_signal_connect(G_OBJECT(quitmenu), "activate", G_CALLBACK(gtk_main_quit), NULL);
     g_signal_connect(G_OBJECT(createtablefilemenu), "activate", G_CALLBACK(edit_menu_create_table), NULL);
     g_signal_connect(G_OBJECT(deletetablefilemenu), "activate", G_CALLBACK(edit_menu_delete_table), NULL);
