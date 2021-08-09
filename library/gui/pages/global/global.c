@@ -1,38 +1,5 @@
 #include "global.h"
 
-void on_menu_open(GtkWindow *menuitem,
-                  gpointer user_data)
-{
-   g_warning("open menu clicked!");
-   GtkWidget *fileChooser;
-   /****************File Chooser***************/
-   GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
-   gint res;
-
-   fileChooser = gtk_file_chooser_dialog_new("Open File",
-                                             NULL,
-                                             action,
-                                             ("_Cancel"),
-                                             GTK_RESPONSE_CANCEL,
-                                             ("_Open"),
-                                             GTK_RESPONSE_ACCEPT,
-                                             NULL);
-
-   res = gtk_dialog_run(GTK_DIALOG(fileChooser));
-   if (res == GTK_RESPONSE_ACCEPT)
-   {
-      char *filename;
-      GtkFileChooser *chooser = GTK_FILE_CHOOSER(fileChooser);
-      filename = gtk_file_chooser_get_filename(chooser);
-      sqlitemgt_is_database_open(filename);
-
-      g_free(filename);
-   }
-
-   gtk_widget_destroy(fileChooser);
-   /****************File Chooser***************/
-}
-
 void checknullerror(g_widget)
 GtkWidget *g_widget;
 {
