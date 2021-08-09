@@ -2,10 +2,12 @@
 <!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkWindow" id="createtablewindow">
+  <object class="GtkWindow" id="insertvaluewindow">
     <property name="name">createtablewindow</property>
+    <property name="width-request">450</property>
+    <property name="height-request">200</property>
     <property name="can-focus">False</property>
-    <property name="title" translatable="yes">Create Table</property>
+    <property name="title" translatable="yes">Insert Value</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -16,7 +18,7 @@
             <property name="height-request">90</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Create Table Preview</property>
+            <property name="label" translatable="yes">Insert Value</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -29,7 +31,8 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="tablename">
+                <property name="name">tablename</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="primary-icon-tooltip-text" translatable="yes">enter table name</property>
@@ -41,7 +44,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="columnsname">
+                <property name="name">columnsname</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="primary-icon-tooltip-text" translatable="yes">enter columns name with data type for example name TEXT</property>
@@ -53,8 +57,20 @@
               </packing>
             </child>
             <child>
+              <object class="GtkEntry" id="value">
+                <property name="name">value</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="createtablebutton">
-                <property name="label" translatable="yes">Create Table</property>
+                <property name="label" translatable="yes">Insert Value</property>
                 <property name="name">createtablebutton</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -63,7 +79,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
           </object>
@@ -71,22 +87,6 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton">
-            <property name="label" translatable="yes">exit</property>
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="valign">center</property>
-            <property name="margin-top">30</property>
-            <property name="margin-bottom">30</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">2</property>
           </packing>
         </child>
       </object>

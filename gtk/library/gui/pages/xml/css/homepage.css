@@ -1,0 +1,19 @@
+button{
+        color: red;
+}
+
+button:hover{
+        color: blue;
+}
+
+label#welcometosqlitemanagementtext, label#statusdatabasename,  label#statusbartablecount, label#statusbarfilesize{
+        color: blueviolet;
+}
+
+label#statusbardatabasenamevalue, label#statusbartablecountvalue, label#statusbarfilesize{
+        color: rebeccapurple;
+}
+
+label#statusbardatabasenamevalue:hover, label#statusbartablecountvalue:hover, label#statusbarfilesize:hover{
+        color: black;
+}
